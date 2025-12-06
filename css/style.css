@@ -1,0 +1,346 @@
+/* ========= GLOBAL RESET ========= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top left, #08001f 0, #14003a 30%, #0b0c5f 55%, #0050ff 100%);
+    color: #f5f7ff;
+}
+
+/* Links */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* ========= NAVBAR ========= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(3, 0, 20, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(120, 144, 255, 0.25);
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-spacer {
+    flex: 1;
+}
+
+/* Centered title */
+.nav-logo {
+    flex: 0;
+    text-align: center;
+}
+
+    .nav-logo a {
+        font-size: 1.9rem; /* about 2x nav links */
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: #ffffff;
+    }
+
+/* Right-side nav links */
+.nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 22px;
+    font-size: 0.95rem;
+}
+
+    .nav-links a {
+        color: #16f3ff;
+        font-weight: 500;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+        .nav-links a:hover {
+            color: #ff4ddb;
+            transform: translateY(-1px);
+        }
+
+.nav-username {
+    color: #ffffff;
+    font-weight: 400;
+    margin-left: 4px;
+}
+
+/* ========= MAIN LAYOUT CONTAINER ========= */
+
+.container.main-content {
+    max-width: 1200px;
+    margin: 40px auto 60px auto;
+    padding: 0 24px 40px 24px;
+}
+
+/* ========= HERO SECTION (HOME PAGE) ========= */
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px 40px;
+    border-radius: 30px;
+    background: radial-gradient(circle at top left, #311b92, #512da8 45%, #1e88e5 100%);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.65);
+    margin-bottom: 50px;
+}
+
+.hero-text {
+    flex: 1 1 320px;
+    color: #ffffff;
+}
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+    }
+
+    .hero-text p {
+        font-size: 1.05rem;
+        margin-bottom: 18px;
+        color: #e8ecff;
+    }
+
+.hero-list {
+    list-style: none;
+    margin-bottom: 24px;
+}
+
+    .hero-list li {
+        margin-bottom: 6px;
+        font-size: 0.98rem;
+        color: #fdfdff;
+    }
+
+        /* “checkbox” emojis already in HTML – just spacing */
+        .hero-list li::before {
+            content: "";
+        }
+
+/* Call-to-action button */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff2975, #ff6a00);
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 10px 28px rgba(255, 71, 133, 0.6);
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 35px rgba(255, 71, 133, 0.85);
+    }
+
+/* Hero image on the right */
+.hero-image {
+    flex: 0 1 380px;
+    display: flex;
+    justify-content: center;
+}
+
+    .hero-image img {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 24px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.7);
+        object-fit: cover;
+    }
+
+/* ========= HOME PAGE – FEATURED PRODUCTS SECTION ========= */
+
+.home-section {
+    margin-top: 20px;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+/* Card used for featured products on homepage */
+.product-card {
+    background: radial-gradient(circle at top left, rgba(43, 11, 85, 0.9), rgba(18, 5, 52, 0.95));
+    border-radius: 26px;
+    padding: 18px 18px 20px 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+    /* Keep product images a consistent size */
+    .product-card img {
+        width: 100%;
+        max-height: 210px;
+        object-fit: contain;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Title + price inside product cards */
+    .product-card h3 {
+        font-size: 1rem;
+        margin-bottom: 2px;
+    }
+
+    .product-card .product-price {
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    .product-card a.product-link {
+        font-size: 0.9rem;
+        color: #4dd0ff;
+    }
+
+/* ========= GENERIC PRODUCT LIST / DETAILS PAGES ========= */
+
+/* Grid for products.php (if you are reusing same card) */
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+    .products-list .product-card {
+        border-radius: 20px;
+    }
+
+/* Product details page (product.php) */
+.product-detail {
+    display: grid;
+    grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+    gap: 32px;
+    align-items: flex-start;
+}
+
+    .product-detail img {
+        width: 100%;
+        max-width: 360px;
+        object-fit: contain;
+        border-radius: 20px;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+    }
+
+/* ========= CART / FORMS / TABLES BASIC STYLES ========= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background: rgba(6, 4, 41, 0.9);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(120, 144, 255, 0.2);
+}
+
+th {
+    text-align: left;
+    background: rgba(18, 12, 78, 0.9);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 9px 11px;
+    border-radius: 10px;
+    border: 1px solid rgba(135, 154, 255, 0.6);
+    background: rgba(6, 4, 41, 0.9);
+    color: #f7f9ff;
+    margin-bottom: 12px;
+}
+
+input[type="submit"],
+button {
+    cursor: pointer;
+}
+
+/* ========= FOOTER ========= */
+
+footer {
+    text-align: center;
+    padding: 18px 0 26px 0;
+    color: #b5b9ff;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(120, 144, 255, 0.22);
+    background: rgba(5, 1, 26, 0.95);
+    margin-top: auto;
+}
+
+/* ========= RESPONSIVE ========= */
+
+@media (max-width: 768px) {
+    .nav-inner {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .nav-logo {
+        order: 1;
+        width: 100%;
+    }
+
+        .nav-logo a {
+            font-size: 1.6rem;
+        }
+
+    .nav-links {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        padding: 28px 22px;
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr;
+    }
+}
