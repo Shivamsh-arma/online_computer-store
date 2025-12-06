@@ -6,7 +6,8 @@ A fully functional e-commerce web application built using PHP and MySQL for the 
 
 - **Name:** Shivam Sharma  
 - **Course:** COSC-2956-F02 – Internet Tools  
-- **Professor:** Ben Kam  
+- **Professor:** Ben Kam
+- **Student Number: ** 239446340  
 
 ---
 
@@ -137,4 +138,5 @@ Follow these steps to run the project successfully:
 
 ## 1️⃣ Move Project Folder
 Place the entire folder named:
+
 
